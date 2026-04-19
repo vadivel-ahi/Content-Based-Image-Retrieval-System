@@ -32,7 +32,7 @@ The system follows a **two-program architecture**: Program 1 pre-extracts featur
 ### Task 1 — Baseline (7×7 Center Patch, SSD)
 
 <p align="center">
-  <img src="images/task1_results.png" width="600"/>
+  <img src="images/task1_results.png" width="400"/>
 </p>
 
 Matches images that share similar central pixel characteristics. Effective for images where the subject occupies the center, but fails when objects are offset or backgrounds vary.
@@ -42,7 +42,7 @@ Matches images that share similar central pixel characteristics. Effective for i
 ### Task 2 — RGB Color Histogram Matching
 
 <p align="center">
-  <img src="images/task2_results.png" width="600"/>
+  <img src="images/task2_results.png" width="400"/>
 </p>
 
 Whole-image 8×8×8 RGB histogram with histogram intersection. Captures global color similarity regardless of spatial arrangement — groups images with similar color palettes (e.g., blue sky + gray stone buildings).
@@ -52,7 +52,7 @@ Whole-image 8×8×8 RGB histogram with histogram intersection. Captures global c
 ### Task 3 — Multi-Region Histogram Matching
 
 <p align="center">
-  <img src="images/task3_results.png" width="600"/>
+  <img src="images/task3_results.png" width="400"/>
 </p>
 
 Splits each image into top and bottom halves with separate histograms. Captures **where** colors appear, not just which colors are present. Significantly improves retrieval for scenes with consistent spatial structure like sky-above / grass-below landscapes.
@@ -62,7 +62,7 @@ Splits each image into top and bottom halves with separate histograms. Captures 
 ### Task 4 — Color + Texture (Gradient Magnitude)
 
 <p align="center">
-  <img src="images/task4_results.png" width="600"/>
+  <img src="images/task4_results.png" width="400"/>
 </p>
 
 Combines a whole-image RGB histogram (512 bins) with a gradient magnitude texture histogram (16 bins). The texture component identifies structural patterns — winter scenes, workshops, and vegetation are matched based on edge strength alongside color.
@@ -106,7 +106,8 @@ A pre-trained ResNet18 network extracts **512-dimensional embeddings** from the 
 ### Task 6 — Classical vs. Deep Learning Comparison
 
 <p align="center">
-  <img src="images/task6_comparison.png" width="600"/>
+  <img src="images/task6_comparison_CF.png" width="600"/>
+  <img src="images/task6_comparison_emb.png" width="600"/>
 </p>
 
 Direct comparison on flower and indoor scene queries:
@@ -253,18 +254,6 @@ data/
 olympus/                # 1,106 image database
 images/                 # Demo screenshots for README
 ```
-
----
-
-## Key Insight
-
-> Feature engineering remains valuable even in the deep learning era. Classical features excel when the discriminating signal is well-understood (geometric shape, spatial color layout). Deep learning excels when semantic understanding matters more than surface appearance. **Hybrid approaches that combine both often outperform either alone.**
-
----
-
-## Keywords
-
-`computer-vision` `image-retrieval` `cbir` `cpp` `opencv` `resnet18` `deep-learning` `histogram-matching` `texture-analysis` `feature-extraction`
 
 ---
 
