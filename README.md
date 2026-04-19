@@ -106,8 +106,8 @@ A pre-trained ResNet18 network extracts **512-dimensional embeddings** from the 
 ### Task 6 — Classical vs. Deep Learning Comparison
 
 <p align="center">
-  <img src="images/task6_comparison_CF.png" width="600"/>
-  <img src="images/task6_comparison_emb.png" width="600"/>
+  <img src="images/task6_comparison_CF0.png" width="600"/>
+  <img src="images/task6_comparison_emb0.png" width="600"/>
 </p>
 
 Direct comparison on flower and indoor scene queries:
